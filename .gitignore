@@ -1,0 +1,81 @@
+#
+/test
+
+# Byte-compiled / optimized / pickled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+dist/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.whl
+*.pth
+MANIFEST.in
+MANIFEST
+
+# Virtual environment
+.venv/
+venv/
+env/
+ENV/
+pyvenv.cfg
+*.virtualenv
+
+# IDE-specific files
+.idea/
+.project
+.settings
+*.log
+*.iml
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Testing / coverage
+.coverage
+*.py,cover
+*.egg
+coverage/
+htmlcov/
+nosetests.xml
+pylint.d/
+pytest_cache/
+.pytest_cache/
+.hypothesis/
+.tox/
+
+# Documentation
+docs/_build/
+*.doctree
+*.pickle
+
+# Static analysis
+.mypy_cache/
+.dmypy_cache/
+.pytype/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Poetry related
+poetry.lock
+
+# Local configuration
+.env
