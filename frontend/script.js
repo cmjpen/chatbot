@@ -1,5 +1,18 @@
 let chatBox = document.getElementById("chat-box");
 let userInput = document.getElementById("user-input");
+
+// Generate a session ID if one doesn't already exist in localStorage
+function getSessionId() {
+    let sessionId = localStorage.getItem("session_id");
+    if (!sessionId) {
+      // Create a simple session id (could be replaced with a more robust solution)
+      sessionId = Date.now().toString() + Math.random().toString(36).substring(2);
+      localStorage.setItem("session_id", sessionId);
+    }
+    return sessionId;
+  }
+  
+const sessionId = getSessionId();
 const sendBtn = document.getElementById("send-btn");
 
 async function sendMessage() {
@@ -14,7 +27,10 @@ async function sendMessage() {
     let response = await fetch("http://127.0.0.1:8000/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: [{ role: "user", content: input }] })
+        body: JSON.stringify({ 
+            messages: [{ role: "user", content: input }], 
+            session_id: sessionId 
+        })
     });
 
     let data = await response.json();

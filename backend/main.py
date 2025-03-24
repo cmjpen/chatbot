@@ -15,5 +15,5 @@ app.add_middleware(
 
 @app.post("/chat")
 async def chat(request: ChatRequest):
-    response = chat_with_gpt(request.messages)
+    response = chat_with_gpt(request.messages, request.session_id)
     return {"response": response}
