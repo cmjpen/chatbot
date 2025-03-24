@@ -1,6 +1,6 @@
 #
 /test
-
+*.env
 # Byte-compiled / optimized / pickled files
 __pycache__/
 *.py[cod]
