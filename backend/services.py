@@ -5,8 +5,10 @@ from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationChain
 from langchain.prompts import PromptTemplate
 import os
+from dotenv import load_dotenv
 
-openai_api_key = os.environ.get('open_ai_key')
+load_dotenv()
+openai_api_key = os.getenv('OPENAI_API_KEY')
 
 session_memory = {}
 
@@ -32,7 +34,7 @@ def chat_with_gpt(messages, session_id):
     conversation = ConversationChain(
         llm=chat_model,
         memory=memory,
-        verbose=False  # Set to True for debugging
+        verbose=False  
     )
 
     response = conversation.predict(input=latest_message_content)
