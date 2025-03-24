@@ -1,19 +1,25 @@
 /* General styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
-body {
-    background-color: #121212;
+body
+ {  font-weight: 400;
+    background-color: rgb(33,33,33);
     color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     overflow: hidden;
+}
+
+.user-message {
+    font-weight: 500;
+}
+
+.bot-message {
+    font-weight: 390;
 }
 
 /* Chat container */
@@ -52,18 +58,19 @@ body {
 /* Chat messages */
 .message {
     max-width: 80%;
-    padding: 10px;
-    border-radius: 8px;
+    padding: 10px 14px;
+    border-radius: 18px;
     word-wrap: break-word;
+    letter-spacing: 0.3px;
 }
 
 .user-message {
-    background-color: #1e88e5;
+    background-color: #333;
     align-self: flex-end;
 }
 
 .bot-message {
-    background-color: #333;
+    background-color: rgb(33, 33, 33);
     align-self: flex-start;
 }
 
@@ -71,33 +78,52 @@ body {
 #input-container {
     display: flex;
     padding: 10px;
-    background: #1a1a1a;
-    border-top: 1px solid #333;
+    align-items: flex-start;
+    /* background: #1a1a1a; */
+    /* border-top: 1px solid #333; */
 }
 
 #user-input {
     flex-grow: 1;
-    padding: 10px;
-    background: #222;
-    border: none;
+    padding: 12px 20px;  /* Adjust padding for input box */
+    background: rgb(48,48,48);
+    border: none; /* Remove the border */
     color: white;
-    outline: none;
-    border-radius: 5px;
+    outline: none; /* Remove the outline when focused */
+    border-radius: 25px; /* Round the corners */
+    font-size: 16px; /* Adjust font size */
+    box-shadow: none; /* Remove any shadow (if any) */
+    resize: none; /* Disable resizing */
+    overflow: hidden; /* Hide the scrollbar */
+    min-height: 40px; /* Set a minimum height for the box */
+    height: auto; /* Allow auto expansion of height */
 }
 
 #send-btn {
-    background: #1e88e5;
+    background-color: rgb(249, 249, 249); /* Light gray color */
     border: none;
-    color: white;
-    padding: 10px 15px;
+    color: black;
+    padding: 12px;  /* Smaller padding */
     margin-left: 10px;
     cursor: pointer;
-    border-radius: 5px;
-    font-size: 18px;
+    border-radius: 50%;  /* Makes the button round */
+    font-size: 26px;  /* Larger arrow size */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 34px;   
+    height: 34px;  
+    transition: background-color 0.3s ease; /* Smooth hover effect */
 }
 
 #send-btn:hover {
-    background: #1565c0;
+    background-color: #e0e0e0; /* Slightly darker gray on hover */
+}
+
+#arrow {
+    font-size: 24px;  /* Adjusted arrow size */
+    color: black;  /* Arrow color */
+    transform: rotate(0deg); /* Ensure it's pointing upwards */
 }
 
 /* Mobile responsive */
